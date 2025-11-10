@@ -56,4 +56,6 @@ Safety notes
 - Always use trading-only API keys with no withdrawal permissions.
 - Keep MODE=paper until you confirm behavior for 48+ hours under real market conditions.
 - Use MAX_POSITION_USD to cap exposure.
+# Crypto Trading Agent
+Basic trading bot backend using CCXT. Will connect to Lovable dashboard later.
 
