@@ -1,0 +1,10 @@
+# requirements.txt
+fastapi==0.95.2
+uvicorn==0.22.0
+ccxt==2.9.90
+httpx==0.24.1
+pandas==2.2.3
+python-dotenv==1.0.0
+numpy==1.26.4
+python-telegram-bot==20.4
+aiofiles==23.1.0
