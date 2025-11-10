@@ -1,0 +1,17 @@
+# run_paper_test.sh
+#!/usr/bin/env bash
+# Simple script to start app locally in paper mode and run a demo test trade.
+export MODE=paper
+export SUPABASE_URL=${SUPABASE_URL:-}
+export SUPABASE_KEY=${SUPABASE_KEY:-}
+uvicorn main:app --host 0.0.0.0 --port 8000 &
+
+echo "Waiting 3s for server..."
+sleep 3
+
+# Create a manual paper trade (if SUPABASE configured)
+curl -sS -X POST "http://127.0.0.1:8000/trade" \
+  -H "Content-Type: application/json" \
+  -d '{"symbol":"BTC/USDT","side":"buy","amount":0.001}' | jq .
+
+echo "Done. Check /positions and /pnl endpoints."
